@@ -1,0 +1,56 @@
+
+#include<stdio.h>
+#include<stdlib.h>
+#include<string.h>
+int main()
+{
+
+
+    int count=0;
+    int i;
+    char string[100];
+    printf("Enter your expression: ");
+    gets(string);
+
+             for(i=1;i<=strlen(string);i++)
+                {
+                    if(
+                       string[0]>='auto' || string[0]<='double' || (string[0]>='int'&&string[0]<='struct') || (string[0]=='break') || string[0]=='else' ||
+          string[0]>='long' || string[0]>='switch' || string[0]>='case' || string[0]>='enum' || string[0]>='register' || string[0]>='typedef'
+          || string[0]>='char' || string[0]>='extern' || string[0]>='return' || string[0]>='union'|| string[0]>='const' || string[0]>='float'
+          || string[0]>='short' || string[0]>='unsigned' || string[0]>='continue' || string[0]>='for' || string[0]>='singed' || string[0]>='void'
+          || string[0]>='default' || string[0]>='goto' || string[0]>='sizeof' || string[0]>='voltile' || string[0]>='do' || string[0]>='if'
+          || string[0]>='static' || string[0]>='while'
+                       )
+                        {
+
+                            count++;
+                        }
+
+
+                }
+
+
+        if(count==(strlen(string)-1))
+                   {
+                      printf("is not keyword");
+                   }
+                else
+                {
+                    printf("is a keyword");
+                }
+
+
+
+
+        return 0;
+
+    }
+
+
+
+
+
+
+
+
