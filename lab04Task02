@@ -54,3 +54,31 @@ int main()
 
 
 
+#include<stdio.h>
+#include<stdlib.h>
+#include<string.h>
+int main()
+{
+ 
+
+    int i;
+    char str[10] = "auto";
+    char str1[10];
+    
+    scanf("%s",str1);
+      if (strcmp(str1,"auto") == 0 || strcmp(str1,"int") == 0 || strcmp(str1,"float") == 0 || strcmp(str1,"double") == 0 || strcmp(str1,"string") == 0)
+      {
+      printf("%s", "Keyword Found");
+      }
+      else{
+          printf("%s", "Keyword not found");
+      }
+        return 0;
+
+    }
+
+
+
+
+
+
