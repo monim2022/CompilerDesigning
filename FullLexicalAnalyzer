@@ -1,0 +1,105 @@
+#include <bits/stdc++.h>
+#include <iostream>
+#include <stdlib.h>
+#include <string.h>
+#include <ctype.h>
+#include<conio.h>
+
+using namespace std;
+
+
+void fullLexAnalyzer()
+{
+    //Keyword
+    //operator
+    //operand/number
+    //Identifier
+    //Punctuation
+    //Comment
+     cout<<"\tLexical Analyzer in c++"<<endl;
+     cout<<"\t\t1.Keyword"<<endl;
+     cout<<"\t\t2.Identifier"<<endl;
+     cout<<"\t\t3.Operand/number"<<endl;
+     cout<<"\t\t4.Operator"<<endl;
+     cout<<"\t\t5.Punctuation"<<endl;
+     cout<<"\t\t6.Comment"<<endl;
+
+
+    cout<<"\n\tEnter your expression:"<<" ";
+    string exp;
+    cin>>exp;
+
+    string Keywords[]= {"auto", "if", "else", "double", "int","string","struct","break",
+    "long","short","switch","case","enum","register","typedef","char"
+    ,"extern","return","union","const","float","default","continue","for","void","goto","sizeof",
+    "while","do","static","signed","unsigned"};
+    int n = sizeof(Keywords)/sizeof(Keywords[0]);
+
+    for (int i=0; i<n; i++)
+    {
+      if(exp.find(Keywords[i])!= string::npos)
+      {
+         exp.erase(exp.find(Keywords[i]),Keywords[i].length());
+         cout<<Keywords[i]<<" is a keyword"<<endl;
+      }
+
+    }
+
+
+
+for(int i=0; i<exp.length(); i++)
+{
+
+    if(
+               exp[i]=='0' || exp[i]=='1' || exp[i]=='2'|| exp[i]=='3' || exp[i]=='4'
+             ||exp[i]=='5' || exp[i]=='6' || exp[i]=='7' || exp[i]=='8'
+             ||  exp[i]=='9'
+        )
+               {
+                 cout<<exp[i]<<" "<<"is a number"<<endl;
+               }
+
+
+
+        else if( exp[i]=='+' || exp[i]=='-' || exp[i]=='*'|| exp[i]=='/'
+           || exp[i]=='=' || exp[i]=='%'|| exp[i]=='<' || exp[i]=='>' || exp[i]=='&&')
+        {
+
+            cout<<exp[i]<<" "<<"is a operator"<<endl;
+        }
+
+        else if(
+                exp[i]== '(' || exp[i] == '{' || exp[i] == '[' || exp[i] == ')' || exp[i] == '}'
+                || exp[i] == ']' || exp[i] == '()' || exp[i] == ';' || exp[i]=='.'
+                || exp[i] == '<<' || exp[i]== '>>' || exp[i] == ',' || exp[i] == '#'
+                )
+                {
+                  cout<<exp[i]<<" "<<"is a punctuation"<<endl;
+                }
+
+
+     else if(exp[i]>='a' && exp[i]>='z' || exp[i]>='A' && exp[i]>='Z' )     //Identifier will be variable or string
+
+        {
+              cout<<exp[i]<<" "<<"is a identifier"<<endl;
+        }
+
+        else
+    {
+        cout<<"Lexicographical error"<<endl;
+        break;
+    }
+
+    }
+
+getch();
+  }
+
+
+
+
+int main()
+{
+fullLexAnalyzer();
+return 0;
+}
